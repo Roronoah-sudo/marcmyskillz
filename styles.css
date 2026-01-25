@@ -1,0 +1,676 @@
+/* ==========================================================================
+   MARC MY SKILLZ - Exact Nick Spinelli Template Match
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --cream: #f7f4ef;
+    --gray: #888888;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--black);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-left {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-link {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--white);
+    transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+    opacity: 0.6;
+}
+
+.nav-link.active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    line-height: 1;
+}
+
+.logo-top {
+    display: block;
+    font-family: 'Anton', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+.logo-bottom {
+    display: block;
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.nav-right {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-right a {
+    color: var(--white);
+    transition: opacity 0.2s;
+}
+
+.nav-right a:hover {
+    opacity: 0.6;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-btn span {
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    transition: 0.3s;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--black);
+    padding: 40px;
+    z-index: 99;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-link {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    color: var(--white);
+}
+
+.mobile-link.active {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+.hero {
+    height: 100vh;
+    min-height: 600px;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* ==========================================================================
+   ABOUT
+   ========================================================================== */
+
+.about {
+    background: var(--black);
+    padding: 80px 40px;
+}
+
+.about-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.about-text {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    color: var(--white);
+}
+
+.about-text:last-child {
+    margin-bottom: 0;
+}
+
+.underline {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ==========================================================================
+   BOOKING
+   ========================================================================== */
+
+.booking {
+    background: var(--black);
+    padding: 80px 40px 120px;
+}
+
+.booking-title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(32px, 5vw, 48px);
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+}
+
+.booking-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.booking-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.booking-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    display: block;
+}
+
+.booking-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.booking-card:hover .booking-image img {
+    transform: scale(1.05);
+}
+
+.booking-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 16px 32px;
+    background: var(--white);
+    color: var(--black);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    transition: opacity 0.2s;
+}
+
+.booking-btn:hover {
+    opacity: 0.85;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.footer {
+    background: var(--black);
+    padding: 60px 40px 80px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.footer-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.footer-icon:hover {
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   EVENTS PAGE
+   ========================================================================== */
+
+.page-dark {
+    background: var(--black);
+    min-height: 100vh;
+}
+
+.events {
+    padding: 100px 40px 80px;
+}
+
+.events-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.event {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+    align-items: start;
+}
+
+.event-image {
+    position: relative;
+}
+
+.event-image img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.event-date {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--white);
+    color: var(--black);
+    padding: 8px 12px;
+    text-align: center;
+    line-height: 1;
+}
+
+.date-month {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.date-day {
+    display: block;
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+}
+
+.event-info {
+    padding-top: 10px;
+}
+
+.event-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+
+.event-time,
+.event-venue {
+    font-size: 14px;
+    color: var(--white);
+    margin-bottom: 6px;
+}
+
+.event-venue a {
+    color: var(--white);
+}
+
+.event-links {
+    font-size: 13px;
+    color: var(--white);
+    margin: 16px 0;
+}
+
+.event-links a {
+    color: var(--white);
+}
+
+.event-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px solid var(--white);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.event-btn:hover {
+    background: var(--white);
+    color: var(--black);
+}
+
+/* ==========================================================================
+   CONTACT PAGE
+   ========================================================================== */
+
+.page-contact {
+    background: var(--cream);
+    color: var(--black);
+    min-height: 100vh;
+}
+
+.header-dark {
+    background: var(--black);
+}
+
+.contact {
+    padding: 120px 40px 80px;
+}
+
+.contact-inner {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.contact-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+.contact-intro {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-partnership {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.contact-partnership a {
+    text-decoration: underline;
+}
+
+/* Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.field-label {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.required {
+    font-weight: 400;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: var(--white);
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--black);
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-btn {
+    display: block;
+    width: auto;
+    margin: 20px auto 0;
+    padding: 16px 48px;
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Epilogue', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.submit-btn:hover {
+    opacity: 0.85;
+}
+
+.submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.form-status {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+.form-status.success {
+    color: green;
+}
+
+.form-status.error {
+    color: red;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .event {
+        grid-template-columns: 280px 1fr;
+        gap: 30px;
+    }
+    
+    .booking-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 0 20px;
+    }
+    
+    .nav-left,
+    .nav-right {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .nav-logo {
+        position: relative;
+        left: 0;
+        transform: none;
+    }
+    
+    .hero {
+        height: 70vh;
+        min-height: 400px;
+    }
+    
+    .about,
+    .booking {
+        padding: 60px 20px;
+    }
+    
+    .booking-grid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+    }
+    
+    .event {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .event-image {
+        max-width: 350px;
+    }
+    
+    .events {
+        padding: 100px 20px 60px;
+    }
+    
+    .contact {
+        padding: 100px 20px 60px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-title {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-title,
+    .booking-title {
+        font-size: 28px;
+    }
+    
+    .event-title {
+        font-size: 24px;
+    }
+}
